@@ -1,0 +1,27 @@
+[
+    {
+        "id":1,
+        "message":"Wuz Up! Do you want to go to the pool?",
+        "type":"sender"
+    },
+    {
+        "id":2,
+        "message":"Yeah of course, but first how are you today?",
+        "type":"receiver"
+    },
+    {
+        "id":3,
+        "message":"I'm surviving Haha",
+        "type":"sender"
+    },
+    {
+        "id":4,
+        "message":"Great, then don't forget you ball",
+        "type":"receiver"
+    },
+    {
+        "id":5,
+        "message":"I won't, meet you downstairs!",
+        "type":"sender"
+    }
+]
