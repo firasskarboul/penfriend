@@ -38,9 +38,9 @@ export default function _AppNavigation(props) {
             {
                 loggedIn ? (
                     <Drawer.Navigator initialRouteName="Home">
-                        <Drawer.Screen name="Home" component={AppStack} />
-                        <Drawer.Screen name="Parent Zone" component={Tabs} />
-                        <Drawer.Screen name="Kids Zone" component={KidStack} />
+                        <Drawer.Screen name="Home" options={{ headerShown: false }} component={AppStack} />
+                        <Drawer.Screen name="Parent Zone" options={{ headerShown: false }} component={Tabs} />
+                        <Drawer.Screen name="Kids Zone" options={{ headerShown: false }} component={KidStack} />
                     </Drawer.Navigator>
                 ) : (
                     <AuthStack />

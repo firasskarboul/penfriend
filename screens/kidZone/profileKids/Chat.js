@@ -17,7 +17,8 @@ import { connect } from 'react-redux'
 import LottieView from 'lottie-react-native'
 import LinearGradient from 'react-native-linear-gradient'
 import axios from 'axios'
-import { FontAwesome, FontAwesome5 } from 'react-native-vector-icons'
+import Icon1 from 'react-native-vector-icons/FontAwesome'
+import Icon2 from 'react-native-vector-icons/FontAwesome5'
 
 const Item = ({ user, navigation }) => (
     <View style={styles.item}>
@@ -46,7 +47,6 @@ const Item = ({ user, navigation }) => (
                 </Text>
             </View>
         </TouchableOpacity>
-
         <TouchableOpacity
             onPress={() => alert('added!')}
             style={{
@@ -59,7 +59,7 @@ const Item = ({ user, navigation }) => (
                 padding: 8,
                 marginRight: 9
             }}>
-            <FontAwesome5 name="phone" size={20} color="#fff" />
+            <Icon2 name="phone" size={20} color="#fff" />
         </TouchableOpacity>
         <TouchableOpacity
             onPress={() => alert('added!')}
@@ -72,7 +72,7 @@ const Item = ({ user, navigation }) => (
                 borderRadius: 80,
                 padding: 8
             }}>
-            <FontAwesome name="video-camera" size={20} color="#000" />
+            <Icon1 name="video-camera" size={20} color="#000" />
         </TouchableOpacity>
     </View>
 );

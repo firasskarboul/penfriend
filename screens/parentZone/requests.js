@@ -14,7 +14,9 @@ import {
 import LinearGradient from 'react-native-linear-gradient'
 import { connect } from 'react-redux'
 import axios from 'axios'
-import { AntDesign, FontAwesome5 } from 'react-native-vector-icons';
+import Icon2 from 'react-native-vector-icons/FontAwesome5';
+import Icon1 from 'react-native-vector-icons/AntDesign';
+
 
 const Item = ({ user }) => (
     <View style={styles.item}>
@@ -57,7 +59,7 @@ const Item = ({ user }) => (
                     padding: 8,
                     marginRight: 30
                 }}>
-                <FontAwesome5 name="user-plus" size={20} color="rgba(75, 101, 132,1.0)" />
+                <Icon2 name="user-plus" size={20} color="rgba(75, 101, 132,1.0)" />
             </TouchableOpacity>
             <TouchableOpacity
                 onPress={() => alert('deleted!')}
@@ -70,7 +72,7 @@ const Item = ({ user }) => (
                     borderRadius: 80,
                     padding: 8
                 }}>
-                <AntDesign name="deleteuser" size={20} color='rgba(254, 211, 48,1.0)' />
+                <Icon1 name="deleteuser" size={20} color='rgba(254, 211, 48,1.0)' />
             </TouchableOpacity>
         </View>
     </View>

@@ -14,7 +14,7 @@ import {
 import LinearGradient from 'react-native-linear-gradient'
 import { connect } from 'react-redux'
 import axios from 'axios'
-import { AntDesign, FontAwesome5 } from 'react-native-vector-icons';
+import Icon from 'react-native-vector-icons/FontAwesome5';
 
 const Item = ({ user }) => (
     <View style={styles.item}>
@@ -58,7 +58,7 @@ const Item = ({ user }) => (
                 paddingBottom: 10,
                 flexDirection: 'row'
             }}>
-            <FontAwesome5 name="user-plus" size={20} color='rgba(75, 101, 132,1.0)' />
+            <Icon name="user-plus" size={20} color='rgba(75, 101, 132,1.0)' />
             <Text style={{
                 fontFamily: 'WhaleTriedRegular',
                 fontSize: 20,

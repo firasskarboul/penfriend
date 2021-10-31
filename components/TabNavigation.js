@@ -59,6 +59,7 @@ const Tabs = () => {
                         <Text style={{ color: focused ? '#0149a8' : 'rgba(19, 15, 64, 0.6)', fontSize: 12, paddingTop: 5 }}>HOME</Text>
                     </View>
                 ),
+                header: () => null
             }} />
             <Tab.Screen name="Search" component={SearchKids} options={{
                 tabBarIcon: ({ focused }) => (
@@ -74,6 +75,7 @@ const Tabs = () => {
                         <Text style={{ color: focused ? '#0149a8' : 'rgba(19, 15, 64, 0.6)', fontSize: 12, paddingTop: 5 }}>Search</Text>
                     </View>
                 ),
+                header: () => null
             }} />
 
             <Tab.Screen name="Add Kid" component={AddKid}
@@ -91,7 +93,8 @@ const Tabs = () => {
                     ),
                     tabBarButton: (props) => (
                         <CustomTabBarAddButton {...props} />
-                    )
+                    ),
+                    header: () => null
                 }}
             />
 
@@ -109,6 +112,7 @@ const Tabs = () => {
                         <Text style={{ color: focused ? null : 'rgba(19, 15, 64, 0.6)', fontSize: 12, paddingTop: 5 }}>Requests</Text>
                     </View>
                 ),
+                header: () => null
             }} />
             <Tab.Screen name="Suggestions" component={SuggestKids} options={{
                 tabBarIcon: ({ focused }) => (
@@ -124,6 +128,7 @@ const Tabs = () => {
                         <Text style={{ color: focused ? '#0149a8' : 'rgba(19, 15, 64, 0.6)', fontSize: 12, paddingTop: 5 }}>Suggests</Text>
                     </View>
                 ),
+                header: () => null
             }} />
         </Tab.Navigator>
     );

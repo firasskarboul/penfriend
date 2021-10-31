@@ -3,7 +3,6 @@ import {
     View,
     Dimensions,
     Text,
-    StatusBar,
     Image,
     StyleSheet,
     TouchableOpacity

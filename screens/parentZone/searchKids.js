@@ -16,7 +16,8 @@ import {
 import LinearGradient from 'react-native-linear-gradient'
 import { connect } from 'react-redux'
 import axios from 'axios'
-import { Ionicons, FontAwesome5 } from 'react-native-vector-icons';
+import Icon1 from 'react-native-vector-icons/Ionicons';
+import Icon2 from 'react-native-vector-icons/FontAwesome5';
 
 const Item = ({ user }) => (
     <View style={styles.item}>
@@ -45,7 +46,7 @@ const Item = ({ user }) => (
                 borderRadius: 80,
                 padding: 8
             }}>
-            <FontAwesome5 name="user-plus" size={20} color="rgba(75, 101, 132,1.0)" />
+            <Icon2 name="user-plus" size={20} color="rgba(75, 101, 132,1.0)" />
         </TouchableOpacity>
     </View>
 );
@@ -93,7 +94,7 @@ export default class _searchKids extends React.Component {
                             <TouchableOpacity
                                 onPress={() => alert('hi')}
                             >
-                                <Ionicons name="md-search-circle" size={60} color="#FF00FF" />
+                                <Icon1 name="md-search-circle" size={60} color="#FF00FF" />
                             </TouchableOpacity>
                         </View>
                         <ScrollView showsVerticalScrollIndicator={false}>

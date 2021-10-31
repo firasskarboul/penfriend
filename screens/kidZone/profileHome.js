@@ -51,7 +51,9 @@ export default class _ProfileHome extends React.Component {
                 }
             />
         )
+
         const image = require('../../assets/images/BGs/BG09/BG09.png');
+        
         return (
             <View style={styles.container}>
                 {/* <ImageBackground source={image} style={styles.background}> */}

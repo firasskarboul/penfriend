@@ -6,7 +6,6 @@ import Discussion from '../screens/kidZone/profileKids/communication/Discussion'
 
 const Stack = createStackNavigator();
 
-
 export default function ChatStack() {
 
     return (

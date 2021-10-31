@@ -48,10 +48,11 @@ const KidsTabs = () => {
                     borderRadius: 15,
                     height: 90,
                     ...styles.shadow
-                }
+                },
+                headerShown: false
             }}
         >
-            <Tab.Screen name="Home" component={ProfileHome} options={{
+            <Tab.Screen name="Home1" component={ProfileHome} options={{
                 tabBarIcon: ({ focused }) => (
                     <View style={{ alignItems: 'center', justifyContent: 'center', top: 15 }}>
                         <Image source={require('../assets/images/tabIcons/home1.png')}
@@ -65,6 +66,7 @@ const KidsTabs = () => {
                         <Text style={{ color: focused ? '#000' : 'rgba(19, 15, 64, 0.6)', fontSize: 12, paddingTop: 5 }}>HOME</Text>
                     </View>
                 ),
+                header: () => null
             }} />
 
             <Tab.Screen name="Add Post" component={AddPost}
@@ -82,7 +84,8 @@ const KidsTabs = () => {
                     ),
                     tabBarButton: (props) => (
                         <CustomTabBarAddButton {...props} />
-                    )
+                    ),
+                    header: () => null
                 }}
             />
 
@@ -100,6 +103,7 @@ const KidsTabs = () => {
                         <Text style={{ fontSize: 12, paddingTop: 5 }}>Chat</Text>
                     </View>
                 ),
+                header: () => null
             })} />
         </Tab.Navigator>
     );
