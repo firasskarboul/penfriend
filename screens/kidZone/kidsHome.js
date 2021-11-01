@@ -109,7 +109,7 @@ export default class _KidsHome extends React.Component {
                             }}
                         /> */}
                         <View style={{
-                            margin: 50,
+                            margin: Dimensions.get('screen').width /8,
                         }}>
                             <Text style={{
                                 fontFamily: 'SandyKidsRegular',
@@ -138,7 +138,7 @@ export default class _KidsHome extends React.Component {
                                     <ActivityIndicator size="small" color="#0000ff" />
                                 </View>
                                 :
-                                <ScrollView style={{ flex: 1 }}
+                                <View style={{ flex: 1 }}
                                     showsVerticalScrollIndicator={false}
                                 >
                                     <FlatList
@@ -148,7 +148,7 @@ export default class _KidsHome extends React.Component {
                                         keyExtractor={item => item.id}
                                         numColumns={2}
                                     />
-                                </ScrollView>
+                                </View>
                         }
                     </SafeAreaView>
 
@@ -200,7 +200,7 @@ const styles = StyleSheet.create({
     item: {
         alignItems: 'center',
         justifyContent: 'center',
-        margin: 20,
+        margin: Dimensions.get('screen').width / 25,
         shadowColor: "#fff",
         shadowOffset: {
             width: 0,

@@ -127,7 +127,7 @@ export default class _ParentHome extends React.Component {
                                     <ActivityIndicator size="small" color="#0000ff" />
                                 </View>
                                 :
-                                <ScrollView style={{ flex: 1 }}
+                                <View style={{ flex: 1 }}
                                     showsVerticalScrollIndicator={false}
                                 >
                                     <FlatList
@@ -137,7 +137,7 @@ export default class _ParentHome extends React.Component {
                                         keyExtractor={item => item.id}
                                         numColumns={2}
                                     />
-                                </ScrollView>
+                                </View>
                         }
                     </SafeAreaView>
 

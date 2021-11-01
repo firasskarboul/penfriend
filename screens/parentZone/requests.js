@@ -166,7 +166,10 @@ const styles = StyleSheet.create({
     title: {
         color: 'black',
         fontSize: 23,
+        marginTop: 15,
+        marginBottom: 20,
         fontFamily: 'WhaleTriedRegular',
+        textAlign: 'center',
         fontWeight: 'bold',
         shadowColor: "#fff",
         shadowOffset: {
@@ -184,10 +187,10 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'space-around',
         width: Dimensions.get('screen').width / 2.3,
-        height: Dimensions.get('screen').height / 4,
+        height: Dimensions.get('screen').height / 3,
         margin: 10,
         paddingTop: 15,
-        paddingBottom: 15
+        paddingBottom: 80
     },
 
     searchView: {

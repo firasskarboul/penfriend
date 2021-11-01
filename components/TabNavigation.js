@@ -11,7 +11,7 @@ const Tab = createBottomTabNavigator();
 
 const CustomTabBarAddButton = ({ children, onPress }) => (
     <TouchableOpacity onPress={onPress} style={{
-        top: -30,
+        top: -43,
         justifyContent: 'center',
         alignItems: 'center',
         ...styles.shadow
@@ -30,9 +30,9 @@ const CustomTabBarAddButton = ({ children, onPress }) => (
 const Tabs = () => {
     return (
         <Tab.Navigator
-            tabBarOptions={{
-                showLabel: false,
-                style: {
+            screenOptions={{
+                tabBarShowLabel: false,
+                tabBarStyle: {
                     position: 'absolute',
                     bottom: 25,
                     left: 20,
@@ -40,14 +40,14 @@ const Tabs = () => {
                     elevation: 0,
                     backgroundColor: '#00FFFF',
                     borderRadius: 15,
-                    height: 90,
+                    height: 85,
                     ...styles.shadow
                 }
             }}
         >
-            <Tab.Screen name="Home" component={ParentHome} options={{
+            <Tab.Screen name="ParentHome" component={ParentHome} options={{
                 tabBarIcon: ({ focused }) => (
-                    <View style={{ alignItems: 'center', justifyContent: 'center', top: 15 }}>
+                    <View style={{ alignItems: 'center', justifyContent: 'center' }}>
                         <Image source={require('../assets/images/tabIcons/home1.png')}
                             resizeMode={'contain'}
                             style={{
@@ -63,7 +63,7 @@ const Tabs = () => {
             }} />
             <Tab.Screen name="Search" component={SearchKids} options={{
                 tabBarIcon: ({ focused }) => (
-                    <View style={{ alignItems: 'center', justifyContent: 'center', top: 15 }}>
+                    <View style={{ alignItems: 'center', justifyContent: 'center' }}>
                         <Image source={require('../assets/images/tabIcons/search2.png')}
                             resizeMode={'contain'}
                             style={{
@@ -100,7 +100,7 @@ const Tabs = () => {
 
             <Tab.Screen name="Friend Requests" component={Requests} options={{
                 tabBarIcon: ({ focused }) => (
-                    <View style={{ alignItems: 'center', justifyContent: 'center', top: 15 }}>
+                    <View style={{ alignItems: 'center', justifyContent: 'center' }}>
                         <Image source={require('../assets/images/tabIcons/demande1.png')}
                             resizeMode={'contain'}
                             style={{
@@ -116,7 +116,7 @@ const Tabs = () => {
             }} />
             <Tab.Screen name="Suggestions" component={SuggestKids} options={{
                 tabBarIcon: ({ focused }) => (
-                    <View style={{ alignItems: 'center', justifyContent: 'center', top: 15 }}>
+                    <View style={{ alignItems: 'center', justifyContent: 'center' }}>
                         <Image source={require('../assets/images/tabIcons/suggestion.png')}
                             resizeMode={'contain'}
                             style={{

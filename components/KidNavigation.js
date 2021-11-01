@@ -12,6 +12,7 @@ const CustomTabBarAddButton = ({ children, onPress }) => (
     <TouchableOpacity onPress={onPress} style={{
         justifyContent: 'center',
         alignItems: 'center',
+        paddingBottom: 88,
         ...styles.shadow
     }}>
         <View style={{
@@ -36,25 +37,24 @@ const KidsTabs = () => {
     };
     return (
         <Tab.Navigator
-            tabBarOptions={{
-                showLabel: false,
-                style: {
+            screenOptions={{
+                tabBarShowLabel: false,
+                tabBarStyle: {
                     position: 'absolute',
-                    bottom: 25,
+                    bottom: 15,
                     left: 20,
                     right: 20,
                     elevation: 0,
                     backgroundColor: '#00FFFF',
                     borderRadius: 15,
-                    height: 90,
+                    height: 85,
                     ...styles.shadow
-                },
-                headerShown: false
+                }
             }}
         >
-            <Tab.Screen name="Home1" component={ProfileHome} options={{
+            <Tab.Screen name="Profile Home" component={ProfileHome} options={{
                 tabBarIcon: ({ focused }) => (
-                    <View style={{ alignItems: 'center', justifyContent: 'center', top: 15 }}>
+                    <View style={{ alignItems: 'center', justifyContent: 'center' }}>
                         <Image source={require('../assets/images/tabIcons/home1.png')}
                             resizeMode={'contain'}
                             style={{
@@ -92,7 +92,7 @@ const KidsTabs = () => {
             <Tab.Screen name="Chat" component={ChatStack} options={({ route }) => ({
                 tabBarVisible: getTabBarVisibility(route),
                 tabBarIcon: ({ focused }) => (
-                    <View style={{ alignItems: 'center', justifyContent: 'center', top: 15 }}>
+                    <View style={{ alignItems: 'center', justifyContent: 'center' }}>
                         <Image source={focused ? require('../assets/images/tabIcons/chat1.png') : require('../assets/images/tabIcons/chat2.png')}
                             resizeMode={'contain'}
                             style={{

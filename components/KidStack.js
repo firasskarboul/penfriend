@@ -10,11 +10,11 @@ export default function KidStack() {
 
   return (
     <Stack.Navigator
-      initialRouteName="Kids Zone"
+      initialRouteName="Kids Home"
       screenOptions={{
         headerShown: false
       }}>
-      <Stack.Screen name="Kids Zone" component={KidsHome} />
+      <Stack.Screen name="Kids Home" component={KidsHome} />
       <Stack.Screen name="Kid Navigation" component={KidsTabs} />
     </Stack.Navigator>
   );

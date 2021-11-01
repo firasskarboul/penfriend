@@ -9,11 +9,11 @@ export default function AuthStack() {
 
   return (
     <Stack.Navigator
-      initialRouteName="Home"
+      initialRouteName="AppHome"
       screenOptions={{
         headerShown: false
       }}>
-      <Stack.Screen name="Home" component={Home} />
+      <Stack.Screen name="AppHome" component={Home} />
     </Stack.Navigator>
   );
 }

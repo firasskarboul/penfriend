@@ -39,7 +39,7 @@ const Item = ({ user }) => (
                                             <Image source={require('../../assets/images/kids/boy1.jpeg')} style={{ width: 85, height: 85, borderRadius: 100 }} />
 
         }
-        <View style={{ marginRight: Dimensions.get('screen').width / 18, marginLeft: Dimensions.get('screen').width / 18, justifyContent: 'center', alignItems: 'center' }}>
+        <View style={{ marginRight: Dimensions.get('screen').width / 18, marginLeft: Dimensions.get('screen').width / 18, justifyContent: 'center', alignItems: 'center', marginBottom: 20, marginTop: 20 }}>
             <Text style={styles.title}>{user.firstName} {user.lastName}</Text>
         </View>
 
@@ -159,10 +159,10 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'space-around',
         width: Dimensions.get('screen').width / 2.3,
-        height: Dimensions.get('screen').height / 4,
+        height: Dimensions.get('screen').height / 3,
         margin: 10,
         paddingTop: 15,
-        paddingBottom: 15,
+        paddingBottom: 80,
         borderRadius: 10
     },
 
@@ -171,6 +171,7 @@ const styles = StyleSheet.create({
         fontSize: 23,
         fontFamily: 'WhaleTriedRegular',
         fontWeight: 'bold',
+        textAlign: 'center',
         shadowColor: "#fff",
         shadowOffset: {
             width: 0,

@@ -32,7 +32,7 @@ const Item = ({ user }) => (
                         <Image source={require('../../assets/images/kids/girl2.jpeg')} style={{ width: 50, height: 50, borderRadius: 100, marginRight: 15 }} />
 
         }
-        <View style={{ marginRight: Dimensions.get('screen').width / 2.7 }}>
+        <View style={{ marginRight: Dimensions.get('screen').width / 3 }}>
             <Text style={styles.title}>{user.firstName} {user.lastName}</Text>
         </View>
         <TouchableOpacity
@@ -97,14 +97,13 @@ export default class _searchKids extends React.Component {
                                 <Icon1 name="md-search-circle" size={60} color="#FF00FF" />
                             </TouchableOpacity>
                         </View>
-                        <ScrollView showsVerticalScrollIndicator={false}>
-                            <FlatList
-                                // data={this.state.data}
-                                data={data}
-                                renderItem={renderItem}
-                                keyExtractor={item => item.id}
-                            />
-                        </ScrollView>
+
+                        <FlatList
+                            // data={this.state.data}
+                            data={data}
+                            renderItem={renderItem}
+                            keyExtractor={item => item.id}
+                        />
                     </SafeAreaView>
 
                     <StatusBar style="auto" />
@@ -161,7 +160,7 @@ const styles = StyleSheet.create({
 
     item: {
         alignItems: 'center',
-        justifyContent: 'center',
+        justifyContent: 'space-around',
         flexDirection: 'row',
         padding: 10,
         margin: 10,
@@ -185,6 +184,6 @@ const styles = StyleSheet.create({
 
     SafeAreaViewContainer: {
         alignItems: 'center',
-        justifyContent: 'center',
+        justifyContent: 'center'
     }
 });

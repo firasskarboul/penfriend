@@ -45,7 +45,8 @@ const Post = ({
                 flexGrow: 1,
                 flexDirection: 'row',
                 alignItems: 'center',
-                marginBottom: 20,
+                marginBottom: Dimensions.get('screen').width / 150,
+                marginTop: 20,
                 paddingHorizontal: 10,
             }}>
                 <Image source={require('../../../assets/images/kids/boy2.jpg')} style={{
