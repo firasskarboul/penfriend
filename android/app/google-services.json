@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "662873564712",
+    "project_id": "penfriend",
+    "storage_bucket": "penfriend.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:662873564712:android:8db00f7b9568a2c26cb71d",
+        "android_client_info": {
+          "package_name": "com.penfriend"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "662873564712-67gc6c3eti096jfl6lnpedvlof9jp4ab.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAxewpS57Sfv1sxdY2uidFi2kLTC2mJuIM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "662873564712-67gc6c3eti096jfl6lnpedvlof9jp4ab.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "662873564712-k1739gb8478j46g2tcf4njmqhidf5451.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.penfriend"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
