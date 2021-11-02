@@ -152,22 +152,9 @@ const styles = StyleSheet.create({
         justifyContent: 'center'
     },
 
-    searchTextInput: {
-        width: Dimensions.get('screen').width / 1.5,
-        borderColor: '#ecf0f1',
-        borderWidth: 1,
-        padding: 10,
-        borderRadius: 20,
-        marginTop: 15,
-        marginRight: 20,
-        color: '#ecf0f1'
-    },
-
     title: {
         color: 'black',
         fontSize: 23,
-        marginTop: 15,
-        marginBottom: 20,
         fontFamily: 'WhaleTriedRegular',
         textAlign: 'center',
         fontWeight: 'bold',
@@ -189,8 +176,6 @@ const styles = StyleSheet.create({
         width: Dimensions.get('screen').width / 2.3,
         height: Dimensions.get('screen').height / 3,
         margin: 10,
-        paddingTop: 15,
-        paddingBottom: 80
     },
 
     searchView: {
@@ -211,6 +196,8 @@ const styles = StyleSheet.create({
     SafeAreaViewContainer: {
         alignItems: 'center',
         justifyContent: 'center',
-        height: Dimensions.get('screen').height / 1.165
+        height: Dimensions.get('screen').height / 1.165,
+
+        paddingBottom: 80
     }
 });

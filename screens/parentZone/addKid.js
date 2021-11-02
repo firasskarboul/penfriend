@@ -3,6 +3,7 @@ import { StyleSheet, View, Dimensions, SafeAreaView, Text, ScrollView, StatusBar
 import LinearGradient from 'react-native-linear-gradient'
 import { connect } from 'react-redux'
 // import * as ImagePicker from 'expo-image-picker';
+
 import { TextInput } from 'react-native-gesture-handler'
 
 export default class _AddKid extends React.Component {
@@ -17,33 +18,19 @@ export default class _AddKid extends React.Component {
         };
     }
 
-
-
     render() {
 
         const image = require('../../assets/images/parentZone/backgroundAdd.jpeg');
         const kid_avatar = require('../../assets/images/kid_avatar.png');
 
-        const pickImage = async () => {
-            // if (Platform.OS !== 'web') {
-            //     const { status } = await ImagePicker.requestMediaLibraryPermissionsAsync();
-            //     if (status !== 'granted') {
-            //         alert('Sorry, we need camera roll permissions to make this work!');
-            //     } else {
-            //         let result = await ImagePicker.launchImageLibraryAsync({
-            //             mediaTypes: ImagePicker.MediaTypeOptions.All,
-            //             allowsEditing: true,
-            //             aspect: [4, 3],
-            //             quality: 1,
-            //         });
-
-            //         if (!result.cancelled) {
-            //             this.setState({ kidImage: result.uri })
-            //         }
-            //     }
-            // }
-
-            alert('hello')
+        const pickImage = () => {
+            ImagePicker.openPicker({
+                width: 300,
+                height: 400,
+                cropping: true
+              }).then(image => {
+                console.log(image);
+              });
         }
 
         return (

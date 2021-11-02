@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, Image, StyleSheet, FlatList, ScrollView, TouchableOpacity } from 'react-native';
+import { View, Text, Image, StyleSheet, FlatList, SafeAreaView, TouchableOpacity } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import Icon from 'react-native-vector-icons/AntDesign';
 import LastWatch from '../../../../components/Messages/LastWatch';
@@ -54,35 +54,33 @@ const Discussion = ({ route, navigation }) => {
                         tintColor: 'blue'
                     }}
                 />
-                <ScrollView showsVerticalScrollIndicator={false}>
-
-                    <FlatList
-                        data={Data}
-                        style={{
-                            marginBottom: 30
-                        }}
-                        renderItem={({ item, index }) => {
-                            if (item.type === "sender") {
-                                return (
-                                    <Sent
+                <FlatList
+                    data={Data}
+                    style={{
+                        marginBottom: 30
+                    }}
+                    renderItem={({ item, index }) => {
+                        if (item.type === "sender") {
+                            return (
+                                <Sent
+                                    message={item.message}
+                                />
+                            )
+                        } else {
+                            return (
+                                <View>
+                                    <Received
+                                        image={itemPic}
                                         message={item.message}
                                     />
-                                )
-                            } else {
-                                return (
-                                    <View>
-                                        <Received
-                                            image={itemPic}
-                                            message={item.message}
-                                        />
-                                    </View>
-                                )
-                            }
-                        }}
-                        keyExtractor={(item, index) => index.toString()}
-                    />
+                                </View>
+                            )
+                        }
+                    }}
+                    keyExtractor={(item, index) => index.toString()}
+                />
 
-                    {/* <LastWatch checkedOn='Yesterday' />
+                {/* <LastWatch checkedOn='Yesterday' />
                     <Received
                         image={itemPic}
                         message={Data[0].message}
@@ -105,7 +103,6 @@ const Discussion = ({ route, navigation }) => {
                     <View>
                         {txt}
                     </View> */}
-                </ScrollView>
             </LinearGradient>
 
             {/* </View> */}

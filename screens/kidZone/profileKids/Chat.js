@@ -117,7 +117,7 @@ export default class _Chat extends React.Component {
                             tintColor: 'blue'
                         }}
                     />
-                    <SafeAreaView style={styles.SafeAreaViewContainer}>
+                    <View style={styles.SafeAreaViewContainer}>
                         <FlatList
                             data={this.state.users}
                             renderItem={renderItem}
@@ -128,7 +128,7 @@ export default class _Chat extends React.Component {
                                 height: 0.5, width: "90%", alignSelf: 'center', backgroundColor: "#fff"
                             }} />}
                         />
-                    </SafeAreaView>
+                    </View>
                     <StatusBar style="auto" />
                 </ImageBackground>
             </View>
@@ -197,6 +197,7 @@ const styles = StyleSheet.create({
     SafeAreaViewContainer: {
         alignItems: 'center',
         justifyContent: 'center',
+        paddingBottom: Dimensions.get('screen').width / 5.5,
         height: Dimensions.get('screen').height / 1.165
     }
 });

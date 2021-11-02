@@ -56,6 +56,7 @@ const data = [
     { id: 2, firstName: 'Firas', lastName: 'Mahjoub', avatar: '../../assets/images/kids/boy1.jpeg', email: 'smahjoub@gmail.com' },
     { id: 3, firstName: 'Firas', lastName: 'Trabelsi', avatar: '../../assets/images/kids/daugther.jpg', email: 'hrebaii@gmail.com' },
     { id: 4, firstName: 'Firas', lastName: 'Khelifa', avatar: '../../assets/images/kids/girl2.jpeg', email: 'arezigg@gmail.com' }
+
 ]
 
 export default class _searchKids extends React.Component {
@@ -184,6 +185,7 @@ const styles = StyleSheet.create({
 
     SafeAreaViewContainer: {
         alignItems: 'center',
-        justifyContent: 'center'
+        justifyContent: 'center',
+        paddingBottom: Dimensions.get('screen').width /2.2
     }
 });

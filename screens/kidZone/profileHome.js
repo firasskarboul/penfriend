@@ -166,6 +166,7 @@ const styles = StyleSheet.create({
     SafeAreaViewContainer: {
         alignItems: 'center',
         justifyContent: 'center',
+        paddingBottom: Dimensions.get('screen').width / 4,
         height: Dimensions.get('screen').height / 1.165
     }
 });

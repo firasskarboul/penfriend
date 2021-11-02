@@ -1,9 +1,10 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { StyleSheet, View, Dimensions, SafeAreaView, Text, ScrollView, StatusBar, Image, KeyboardAvoidingView, TouchableOpacity } from 'react-native'
 import LinearGradient from 'react-native-linear-gradient'
 import { connect } from 'react-redux'
 // import * as ImagePicker from 'expo-image-picker';
 import { TextInput } from 'react-native-gesture-handler'
+import ImagePicker from 'react-native-image-crop-picker';
 
 export default class _AddPost extends React.Component {
 
@@ -13,7 +14,7 @@ export default class _AddPost extends React.Component {
             fullName: '',
             password: '',
             selectedAge: 1,
-            kidImage: null,
+            kidImage: null
         };
     }
 
@@ -23,30 +24,20 @@ export default class _AddPost extends React.Component {
         const kid_avatar = require('../../../assets/images/kid_avatar.png');
 
         const pickImage = async () => {
-            // if (Platform.OS !== 'web') {
-            //     const { status } = await ImagePicker.requestMediaLibraryPermissionsAsync();
-            //     if (status !== 'granted') {
-            //         alert('Sorry, we need camera roll permissions to make this work!');
-            //     } else {
-            //         let result = await ImagePicker.launchImageLibraryAsync({
-            //             mediaTypes: ImagePicker.MediaTypeOptions.All,
-            //             allowsEditing: true,
-            //             aspect: [4, 3],
-            //             quality: 1,
-            //         });
+            ImagePicker.openPicker({
+                cropping: false
+            }).then(image => {
+                this.setState({ kidImage: image.path })
+            });
+        }
 
-            //         if (!result.cancelled) {
-            //             this.setState({ kidImage: result.uri })
-            //         }
-            //     }
-            // }
+        const addPost = () => {
+            alert('hi')
         }
 
         return (
             <View style={styles.container}>
-                {/* <ImageBackground source={image} style={styles.bgImage}> */}
                 <LinearGradient
-                    // Background Linear Gradient
                     colors={['#017c35', '#02c18c', '#0048f6', '#0048f6']}
                     style={styles.background}
                 />
@@ -89,40 +80,32 @@ export default class _AddPost extends React.Component {
                                 placeholderTextColor="rgba(0, 0, 0, 0.7)"
                                 multiline={true}
                             />
-                            <Image
-                                source={this.state.kidImage !== null ?
-                                    { uri: this.state.kidImage } :
-                                    require('../../../assets/images/kids/uploadImage.png')}
-                                style={this.state.kidImage !== null
-                                    ? {
-                                        marginTop: 50,
-                                        marginBottom: 8,
-                                        width: Dimensions.get('screen').width / 1.2,
-                                        height: Dimensions.get('screen').height / 3.4,
-                                        borderRadius: 0,
-                                        shadowColor: 'red',
-                                        shadowOffset: {
-                                            width: 0,
-                                            height: 5,
-                                        },
-                                        shadowOpacity: 0.36,
-                                        shadowRadius: 6.68,
-
-                                        elevation: 11
-                                    } : {
-                                        marginTop: 60,
-                                        marginBottom: 8,
-                                        width: 207,
-                                        height: 235,
-                                        borderRadius: 0
-                                    }} />
+                            <TouchableOpacity onPress={pickImage}>
+                                <Image
+                                    source={this.state.kidImage !== null ?
+                                        { uri: this.state.kidImage } :
+                                        require('../../../assets/images/kids/uploadImage.png')}
+                                    style={this.state.kidImage !== null
+                                        ? {
+                                            marginTop: 50,
+                                            marginBottom: 8,
+                                            width: Dimensions.get('screen').width / 1.2,
+                                            height: Dimensions.get('screen').height / 3.4,
+                                            borderRadius: 0,
+                                        } : {
+                                            marginTop: 28,
+                                            width: 207,
+                                            height: 235,
+                                            borderRadius: 0
+                                        }} />
+                            </TouchableOpacity>
                             <LinearGradient
                                 // Background Linear Gradient
                                 colors={['#FFFC1A', '#1A2FFF', '#FF1AEE', '#FFFC1A']}
                                 start={{ x: -1, y: 0 }}
                                 end={{ x: 1, y: 0 }}
                                 style={{
-                                    marginTop: 60,
+                                    marginTop: 35,
                                     paddingTop: 5,
                                     paddingBottom: 5,
                                     paddingLeft: 10,
@@ -144,9 +127,9 @@ export default class _AddPost extends React.Component {
                                     shadowRadius: 6.68,
 
                                     elevation: 11
-                                }} onPress={pickImage}>
+                                }} onPress={addPost}>
 
-                                    <Text style={{ fontFamily: 'SandyKidsRegular', fontSize: 30, letterSpacing: 2, color: '#fff' }}>Select Image/Video</Text>
+                                    <Text style={{ fontFamily: 'SandyKidsRegular', fontSize: 30, letterSpacing: 2, color: '#fff' }}>Add post</Text>
                                 </TouchableOpacity>
                             </LinearGradient>
 
@@ -155,7 +138,6 @@ export default class _AddPost extends React.Component {
                 </SafeAreaView>
 
                 <StatusBar style="auto" />
-                {/* </ImageBackground> */}
             </View>
         );
     }

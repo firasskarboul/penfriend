@@ -42,7 +42,8 @@ const Tabs = () => {
                     borderRadius: 15,
                     height: 85,
                     ...styles.shadow
-                }
+                },
+                tabBarHideOnKeyboard: true
             }}
         >
             <Tab.Screen name="ParentHome" component={ParentHome} options={{

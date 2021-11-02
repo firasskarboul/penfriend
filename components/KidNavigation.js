@@ -26,15 +26,16 @@ const CustomTabBarAddButton = ({ children, onPress }) => (
     </TouchableOpacity>
 );
 
-const KidsTabs = () => {
-    const getTabBarVisibility = (route) => {
-        const routeName = getFocusedRouteNameFromRoute(route)
+const getTabBarVisibility = (route) => {
+    const routeName = getFocusedRouteNameFromRoute(route)
 
-        if (routeName === 'Discussion') {
-            return false;
-        }
-        return true;
-    };
+    if (routeName === 'Discussion') {
+        return false;
+    }
+    return true;
+};
+
+const KidsTabs = () => {
     return (
         <Tab.Navigator
             screenOptions={{
@@ -49,7 +50,8 @@ const KidsTabs = () => {
                     borderRadius: 15,
                     height: 85,
                     ...styles.shadow
-                }
+                },
+                tabBarHideOnKeyboard: true
             }}
         >
             <Tab.Screen name="Profile Home" component={ProfileHome} options={{
@@ -89,22 +91,40 @@ const KidsTabs = () => {
                 }}
             />
 
-            <Tab.Screen name="Chat" component={ChatStack} options={({ route }) => ({
-                tabBarVisible: getTabBarVisibility(route),
-                tabBarIcon: ({ focused }) => (
-                    <View style={{ alignItems: 'center', justifyContent: 'center' }}>
-                        <Image source={focused ? require('../assets/images/tabIcons/chat1.png') : require('../assets/images/tabIcons/chat2.png')}
-                            resizeMode={'contain'}
-                            style={{
-                                width: 40,
-                                height: 40,
-                            }}
-                        />
-                        <Text style={{ fontSize: 12, paddingTop: 5 }}>Chat</Text>
-                    </View>
-                ),
-                header: () => null
-            })} />
+            <Tab.Screen name="Chat" component={ChatStack} options={({ route }) => (
+                !getTabBarVisibility(route) ? {
+                    tabBarIcon: ({ focused }) => (
+                        <View style={{ alignItems: 'center', justifyContent: 'center' }}>
+                            <Image source={focused ? require('../assets/images/tabIcons/chat1.png') : require('../assets/images/tabIcons/chat2.png')}
+                                resizeMode={'contain'}
+                                style={{
+                                    width: 40,
+                                    height: 40,
+                                }}
+                            />
+                            <Text style={{ fontSize: 12, paddingTop: 5 }}>Chat</Text>
+                        </View>
+                    ),
+
+                    tabBarStyle: { display: 'none' },
+                    header: () => null
+                }
+                    : {
+                        tabBarIcon: ({ focused }) => (
+                            <View style={{ alignItems: 'center', justifyContent: 'center' }}>
+                                <Image source={focused ? require('../assets/images/tabIcons/chat1.png') : require('../assets/images/tabIcons/chat2.png')}
+                                    resizeMode={'contain'}
+                                    style={{
+                                        width: 40,
+                                        height: 40,
+                                    }}
+                                />
+                                <Text style={{ fontSize: 12, paddingTop: 5 }}>Chat</Text>
+                            </View>
+                        ),
+                        header: () => null
+                    }
+            )} />
         </Tab.Navigator>
     );
 }

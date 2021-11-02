@@ -85,7 +85,8 @@ export default class _ParentHome extends React.Component {
                 <ImageBackground source={image} style={styles.bgImage}>
                     <SafeAreaView style={{
                         alignItems: 'center',
-                        justifyContent: 'center'
+                        justifyContent: 'center',
+                        paddingBottom: Dimensions.get('screen').width / 4
                     }}>
                         <Image source={require('../../assets/images/parentZone/mapMonde.png')}
                             style={{
@@ -189,7 +190,7 @@ const styles = StyleSheet.create({
     item: {
         alignItems: 'center',
         justifyContent: 'center',
-        margin: 20,
+        margin: Dimensions.get('screen').width / 25,
         shadowColor: "#fff",
         shadowOffset: {
             width: 0,
