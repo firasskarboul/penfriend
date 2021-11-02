@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
-import { StyleSheet, View, Text, TouchableOpacity, Dimensions, Image } from 'react-native'
+import { StyleSheet, View, Text, TouchableOpacity, Dimensions, Image, ImageBackground } from 'react-native'
 import { connect } from 'react-redux'
-import LinearGradient from 'react-native-linear-gradient';
 
 const _SecondPage = (props) => {
 
@@ -12,74 +11,83 @@ const _SecondPage = (props) => {
   return (
     <View
       style={{
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center'
+        flex: 1
       }}
     >
-      <LinearGradient
-        // Background Linear Gradient
-        colors={['#FC4FFF', '#00FFB3', '#6BFF2B', '#FFFF00']}
-        style={styles.background}
-        start={{ x: 0.0, y: 0.02 }} end={{ x: 0.5, y: 1.7 }}
-        locations={[0, 0.5, 0.6, 1]}
-      />
-      <View style={styles.container}>
-        <Text style={styles.title}>Gender</Text>
-      </View>
-
-      <View style={styles.container}>
-        <View style={{
-          alignItems: 'center',
-          justifyContent: 'center',
-          marginBottom: 30
-        }}>
-          <TouchableOpacity style={{
-            width: 150,
-            height: 150,
-            borderRadius: 100,
-            marginBottom: 20
-          }}
-            onPress={() => {
-              setSelected('female')
-              GENDER('female')
-            }}
-          >
-            {selected == 'female'
-              ?
-              <Image source={require('../../assets/images/getStarted/signup/mother_selected.png')} />
-              :
-              <Image source={require('../../assets/images/getStarted/signup/mother.png')} />
-            }
-          </TouchableOpacity>
-          <Text style={styles.gender}>MOTHER</Text>
+      <ImageBackground source={require('../../assets/images/getStarted/signup/BG.png')} style={{
+        flex: 1,
+        resizeMode: "cover",
+        justifyContent: "center",
+        alignItems: "center"
+      }}>
+        <View style={styles.container}>
+          <Text style={styles.title}>Gender</Text>
         </View>
 
-        <View style={{
-          alignItems: 'center',
-          justifyContent: 'center',
-        }}>
-          <TouchableOpacity style={{
-            width: 150,
-            height: 150,
-            borderRadius: 100,
-            marginBottom: 20
-          }}
-            onPress={() => {
-              setSelected('male')
-              GENDER('male')
+        <View style={styles.container}>
+          <View style={{
+            alignItems: 'center',
+            justifyContent: 'center',
+            marginBottom: 30
+          }}>
+            <TouchableOpacity style={{
+              width: 150,
+              height: 150,
+              borderRadius: 100,
+              marginBottom: 20
             }}
-          >
-            {selected == 'male' ?
-              <Image source={require('../../assets/images/getStarted/signup/father_selected.png')} />
-              :
-              <Image source={require('../../assets/images/getStarted/signup/father.png')} />
-            }
-          </TouchableOpacity>
-          <Text style={styles.gender}>FATHER</Text>
-        </View>
-      </View>
+              onPress={() => {
+                setSelected('female')
+                GENDER('female')
+              }}
+            >
+              {selected == 'female'
+                ?
+                <Image
+                  source={require('../../assets/images/getStarted/signup/mother_selected.png')}
+                  style={{ width: 150, height: 150 }}
+                />
+                :
+                <Image
+                  source={require('../../assets/images/getStarted/signup/mother.png')}
+                  style={{ width: 150, height: 150 }}
+                />
+              }
+            </TouchableOpacity>
+            <Text style={styles.gender}>MOTHER</Text>
+          </View>
 
+          <View style={{
+            alignItems: 'center',
+            justifyContent: 'center',
+          }}>
+            <TouchableOpacity style={{
+              width: 150,
+              height: 150,
+              borderRadius: 100,
+              marginBottom: 20
+            }}
+              onPress={() => {
+                setSelected('male')
+                GENDER('male')
+              }}
+            >
+              {selected == 'male' ?
+                <Image
+                  source={require('../../assets/images/getStarted/signup/father_selected.png')}
+                  style={{ width: 150, height: 150 }}
+                />
+                :
+                <Image
+                  source={require('../../assets/images/getStarted/signup/father.png')}
+                  style={{ width: 150, height: 150 }}
+                />
+              }
+            </TouchableOpacity>
+            <Text style={styles.gender}>FATHER</Text>
+          </View>
+        </View>
+      </ImageBackground>
 
     </View>
   );
@@ -122,14 +130,14 @@ const styles = StyleSheet.create({
     fontSize: 60,
     textAlign: 'center',
     fontFamily: 'WhaleTriedRegular',
-    color: '#81ecec',
+    color: 'white',
     letterSpacing: 3
   },
 
   gender: {
     fontSize: 30,
     fontFamily: 'WhaleTriedRegular',
-    color: '#894DFD',
+    color: 'white',
     letterSpacing: 3
   }
 })

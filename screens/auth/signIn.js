@@ -99,7 +99,7 @@ class _SignIn extends React.Component {
                                 width: Dimensions.get('window').width - 200,
                                 alignItems: 'center',
                                 justifyContent: 'center',
-                                backgroundColor: '#edff8f',
+                                backgroundColor: '#ff9f00',
                                 borderRadius: 25,
                             }}
                             onPress={() => {
@@ -121,7 +121,7 @@ class _SignIn extends React.Component {
                                     ?
                                     <ActivityIndicator size="small" color="black" />
                                     :
-                                    <Text>Sign In</Text>
+                                    <Text style={{color: '#fff'}}>Sign In</Text>
                             }
 
                         </TouchableOpacity>
@@ -136,11 +136,11 @@ class _SignIn extends React.Component {
                                     width: Dimensions.get('window').width - 250,
                                     alignItems: 'center',
                                     justifyContent: 'center',
-                                    backgroundColor: '#ff9668',
+                                    backgroundColor: '#ff5200',
                                     borderRadius: 25,
                                     marginTop: 10
                                 }}
-                            // onPress={() => {props.navigation.navigate('SignUp')}}
+                            onPress={() => {this.props.navigation.navigate('SignUp')}}
                             >
                                 <Text style={{ color: 'white' }}>Sign Up</Text>
                             </TouchableOpacity>

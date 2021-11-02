@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { StyleSheet, View, Text, TextInput, Dimensions, KeyboardAvoidingView, Platform } from 'react-native'
+import { StyleSheet, View, Text, TextInput, Dimensions, KeyboardAvoidingView, ImageBackground, Platform } from 'react-native'
 import { connect } from 'react-redux'
 import LinearGradient from 'react-native-linear-gradient';
 
@@ -21,98 +21,96 @@ const _FirstPage = (props) => {
   return (
     <View
       style={{
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
+        flex: 1
       }}
     >
-      <LinearGradient
-        // Background Linear Gradient
-        colors={['#00FFB3', '#6BFF2B', '#FFFF00']}
-        style={styles.background}
-        start={{ x: 0.0, y: 0.02 }} end={{ x: 0.5, y: 1.7 }}
-        locations={[0, 0.4, 0.9]}
-      />
-      <View style={{
-        flexGrow: 1,
-        alignItems: 'center',
-        justifyContent: 'center'
+      <ImageBackground source={require('../../assets/images/getStarted/signup/BGPersonalInfos.png')} style={{
+        flex: 1,
+        resizeMode: "cover",
+        justifyContent: "center",
+        alignItems: "center"
       }}>
-        <Text style={styles.title}>Personal Information</Text>
-      </View>
+        <View style={{
+          flexGrow: 1,
+          alignItems: 'center',
+          justifyContent: 'center'
+        }}>
+          <Text style={styles.title}>Personal Information</Text>
+        </View>
 
-      <KeyboardAvoidingView style={{
-        flexGrow: 1,
-        alignItems: 'center',
-        justifyContent: 'center'
-      }}
-        behavior="padding"
-        enabled
-      >
+        <KeyboardAvoidingView style={{
+          flexGrow: 1,
+          alignItems: 'center',
+          justifyContent: 'center'
+        }}
+          behavior="padding"
+          enabled
+        >
 
-        <TextInput
-          style={styles.inputText}
-          onChangeText={(firstName) => {
-            setSignUpForm({ ...signUpForm, firstName: firstName })
-            PERSONAL_INFOS(signUpForm)
-          }}
-          placeholder='First Name'
-          placeholderTextColor='rgba(0, 0, 0,0.3)'
-        />
+          <TextInput
+            style={styles.inputText}
+            onChangeText={(firstName) => {
+              setSignUpForm({ ...signUpForm, firstName: firstName })
+              PERSONAL_INFOS(signUpForm)
+            }}
+            placeholder='First Name'
+            placeholderTextColor='rgba(0, 0, 0,0.3)'
+          />
 
-        <TextInput
-          style={styles.inputText}
-          onChangeText={lastName => {
-            setSignUpForm({ ...signUpForm, lastName: lastName })
-            PERSONAL_INFOS(signUpForm)
-          }}
-          placeholder='Last Name'
-          placeholderTextColor='rgba(0, 0, 0,0.3)'
-        />
+          <TextInput
+            style={styles.inputText}
+            onChangeText={lastName => {
+              setSignUpForm({ ...signUpForm, lastName: lastName })
+              PERSONAL_INFOS(signUpForm)
+            }}
+            placeholder='Last Name'
+            placeholderTextColor='rgba(0, 0, 0,0.3)'
+          />
 
-        <TextInput
-          style={styles.inputText}
-          onChangeText={nationality => {
-            setSignUpForm({ ...signUpForm, nationality: nationality })
-            PERSONAL_INFOS(signUpForm)
-          }}
-          placeholder='Nationality'
-          placeholderTextColor='rgba(0, 0, 0,0.3)'
-        />
+          <TextInput
+            style={styles.inputText}
+            onChangeText={nationality => {
+              setSignUpForm({ ...signUpForm, nationality: nationality })
+              PERSONAL_INFOS(signUpForm)
+            }}
+            placeholder='Nationality'
+            placeholderTextColor='rgba(0, 0, 0,0.3)'
+          />
 
-        <TextInput
-          style={styles.inputText}
-          onChangeText={phoneNumber => {
-            setSignUpForm({ ...signUpForm, phoneNumber: phoneNumber })
-            PERSONAL_INFOS(signUpForm)
-          }}
-          placeholder='Phone Number'
-          placeholderTextColor='rgba(0, 0, 0,0.3)'
-          keyboardType={Platform.OS == 'ios' ? 'phone-pad' : 'numeric'}
-        />
+          <TextInput
+            style={styles.inputText}
+            onChangeText={phoneNumber => {
+              setSignUpForm({ ...signUpForm, phoneNumber: phoneNumber })
+              PERSONAL_INFOS(signUpForm)
+            }}
+            placeholder='Phone Number'
+            placeholderTextColor='rgba(0, 0, 0,0.3)'
+            keyboardType={Platform.OS == 'ios' ? 'phone-pad' : 'numeric'}
+          />
 
-        <TextInput
-          style={styles.inputText}
-          onChangeText={email => {
-            setSignUpForm({ ...signUpForm, email: email })
-            PERSONAL_INFOS(signUpForm)
-          }}
-          placeholder='Email'
-          placeholderTextColor='rgba(0, 0, 0,0.3)'
-          keyboardType='email-address'
-        />
+          <TextInput
+            style={styles.inputText}
+            onChangeText={email => {
+              setSignUpForm({ ...signUpForm, email: email })
+              PERSONAL_INFOS(signUpForm)
+            }}
+            placeholder='Email'
+            placeholderTextColor='rgba(0, 0, 0,0.3)'
+            keyboardType='email-address'
+          />
 
-        <TextInput
-          style={styles.inputText}
-          onChangeText={password => {
-            setSignUpForm({ ...signUpForm, password: password })
-            PERSONAL_INFOS(signUpForm)
-          }}
-          placeholder='Password'
-          placeholderTextColor='rgba(0, 0, 0,0.3)'
-          secureTextEntry
-        />
-      </KeyboardAvoidingView>
+          <TextInput
+            style={styles.inputText}
+            onChangeText={password => {
+              setSignUpForm({ ...signUpForm, password: password })
+              PERSONAL_INFOS(signUpForm)
+            }}
+            placeholder='Password'
+            placeholderTextColor='rgba(0, 0, 0,0.3)'
+            secureTextEntry
+          />
+        </KeyboardAvoidingView>
+      </ImageBackground>
     </View>
   );
 };

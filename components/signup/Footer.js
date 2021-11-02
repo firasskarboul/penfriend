@@ -22,6 +22,8 @@ const Footer = ({
                 height: HEIGHT,
                 backgroundColor,
                 opacity: 1,
+                borderTopLeftRadius: 8,
+                borderTopRightRadius: 8,
                 alignItems: 'center',
                 paddingHorizontal: FOOTER_PADDING
             }}

@@ -13,7 +13,7 @@ export default class _Home extends React.Component {
         return (
             <View style={styles.container}>
 
-                <ImageBackground source={require('../assets/images/HomeScreen/BG.png')} style={{
+                <ImageBackground source={require('../assets/images/HomeScreen/homeBG.png')} style={{
                     flex: 1,
                     resizeMode: "cover",
                     justifyContent: "center",
@@ -30,13 +30,12 @@ export default class _Home extends React.Component {
                                 source={require('../assets/images/HomeScreen/Kids.png')}
                                 style={{
                                     width: Dimensions.get('screen').width / 1.25,
-                                    height: 230,
-                                    marginBottom: -25
+                                    height: 245
                                 }}
                             />
                         </TouchableOpacity>
                     </View>
-                    <View style={{
+                    {/* <View style={{
                         backgroundColor: "rgba(255, 255, 255, 0.6)",
                         borderColor: "#D94DEA",
                         borderTopWidth: 3,
@@ -50,10 +49,8 @@ export default class _Home extends React.Component {
                             fontFamily: 'WhaleTriedRegular',
                             fontSize: 34
                         }}>CHOOSE YOUR ZONE</Text>
-                    </View>
-                    <View style={{
-
-                    }}>
+                    </View> */}
+                    <View>
                         <TouchableOpacity onPress={() => {
                             this.props.navigation.navigate('Parent Zone')
                         }}>
@@ -61,7 +58,7 @@ export default class _Home extends React.Component {
                                 source={require('../assets/images/HomeScreen/Parent.png')}
                                 style={{
                                     width: Dimensions.get('screen').width / 1.25,
-                                    height: 230
+                                    height: 245
                                 }}
                             />
                         </TouchableOpacity>

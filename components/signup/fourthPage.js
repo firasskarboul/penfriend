@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from 'react'
-import { StyleSheet, View, Text, Dimensions, Image } from 'react-native'
-// import * as ImagePicker from 'expo-image-picker';
+import { StyleSheet, View, Text, Dimensions, Image, ImageBackground } from 'react-native'
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import { connect } from 'react-redux'
-import LinearGradient from 'react-native-linear-gradient';
+import ImagePicker from 'react-native-image-crop-picker'
 
 const _FourthPage = (props) => {
 
@@ -13,57 +12,43 @@ const _FourthPage = (props) => {
 
   const { FAMILY_IMAGE } = props
 
-  // useEffect(() => {
-  //   (async () => {
-  //     if (Platform.OS !== 'web') {
-  //       const { status } = await ImagePicker.requestMediaLibraryPermissionsAsync();
-  //       if (status !== 'granted') {
-  //         alert('Sorry, we need camera roll permissions to make this work!');
-  //       }
-  //     }
-  //   })();
-
-  //   FAMILY_IMAGE('../../assets/images/family_avatar.png')
-  // }, []);
+  useEffect(() => {
+    FAMILY_IMAGE('../../assets/images/family_avatar.png')
+  }, []);
 
   const pickImage = async () => {
-    // let result = await ImagePicker.launchImageLibraryAsync({
-    //   mediaTypes: ImagePicker.MediaTypeOptions.All,
-    //   allowsEditing: true,
-    //   aspect: [4, 3],
-    //   quality: 1,
-    // });
-
-    // if (!result.cancelled) {
-    //   setFamilyImage(result.uri)
-    //   FAMILY_IMAGE(result.uri)
-    // }
-
-    alert('hello')
+    await ImagePicker.openPicker({
+      width: 300,
+      height: 300,
+      cropping: true
+    }).then(image => {
+      setFamilyImage(image.path)
+      FAMILY_IMAGE(image.path)
+    });
   };
 
   return (
     <View style={styles.container}>
-      <LinearGradient
-        // Background Linear Gradient
-        colors={['#FC4FFF', '#00FFB3', '#6BFF2B', '#FFFF00']}
-        style={styles.background}
-        start={{ x: 0.0, y: 0.02 }} end={{ x: 0.5, y: 1.7 }}
-        locations={[0, 0.5, 0.6, 1]}
-      />
-      <View style={{
-        justifyContent: 'center',
-        alignItems: 'center'
+      <ImageBackground source={require('../../assets/images/getStarted/signup/parentBG.png')} style={{
+        flex: 1,
+        resizeMode: "cover",
+        justifyContent: "center",
+        alignItems: "center"
       }}>
-        <Text style={styles.title}>Family Photo</Text>
-      </View>
-      <TouchableOpacity style={{
-        justifyContent: 'center',
-        alignItems: 'center'
-      }} onPress={pickImage}>
-        <Image source={familyImage !== null ? { uri: familyImage } : family_avatar} style={{ width: 200, height: 200, borderRadius: 100, marginTop: 100 }} />
-        <Text style={{ textAlign: 'center', color: 'yellow', margin: 50 }}>Select an image that contain you and all your kids that are going to have profiles in Penfriend</Text>
-      </TouchableOpacity>
+        <View style={{
+          justifyContent: 'center',
+          alignItems: 'center'
+        }}>
+          <Text style={styles.title}>Family Photo</Text>
+        </View>
+        <TouchableOpacity style={{
+          justifyContent: 'center',
+          alignItems: 'center'
+        }} onPress={pickImage}>
+          <Image source={familyImage !== null ? { uri: familyImage } : family_avatar} style={{ width: 200, height: 200, borderRadius: 100, marginTop: 100 }} />
+          <Text style={{ textAlign: 'center', color: 'yellow', margin: 50 }}>Select an image that contain you and all your kids that are going to have profiles in Penfriend</Text>
+        </TouchableOpacity>
+      </ImageBackground>
     </View>
   );
 };
@@ -78,9 +63,7 @@ const FourthPage = connect(null, mapDispatchToProps)(_FourthPage)
 
 const styles = StyleSheet.create({
   container: {
-    flexGrow: 1,
-    alignItems: 'center',
-    justifyContent: 'center'
+    flexGrow: 1
   },
 
   inputText: {
@@ -102,10 +85,10 @@ const styles = StyleSheet.create({
   },
 
   title: {
-    fontSize: 60,
+    fontSize: 50,
     textAlign: 'center',
     fontFamily: 'WhaleTriedRegular',
-    color: '#81ecec',
+    color: '#fff',
     letterSpacing: 3
   },
 

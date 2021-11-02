@@ -20,7 +20,7 @@ export default class GetStarted extends React.Component {
             <View style={styles.container}>
                 <LinearGradient
                     // Background Linear Gradient
-                    colors={['#FC4FFF', '#00FFB3', '#6BFF2B', '#FFFF00']}
+                    colors={['#ffe200', '#ff5000', '#ff5000']}
                     style={styles.background}
                     start={{ x: 0.0, y: 0.02 }} end={{ x: 0.5, y: 1.7 }}
                     locations={[0, 0.5, 0.6, 1]}

@@ -1,8 +1,7 @@
 import React, { useState } from 'react'
-import { StyleSheet, View, Text, Platform, Button, Dimensions } from 'react-native'
+import { StyleSheet, View, Text, Platform, ImageBackground, Dimensions, TouchableOpacity } from 'react-native'
 import DateTimePicker from '@react-native-community/datetimepicker'
 import { connect } from 'react-redux'
-import LinearGradient from 'react-native-linear-gradient';
 
 const _ThirdPage = (props) => {
 
@@ -21,40 +20,78 @@ const _ThirdPage = (props) => {
 
   return (
     <View style={styles.container}>
-      <LinearGradient
-        // Background Linear Gradient
-        colors={['#FC4FFF', '#00FFB3', '#6BFF2B', '#FFFF00']}
-        style={styles.background}
-        start={{ x: 0.0, y: 0.02 }} end={{ x: 0.5, y: 1.7 }}
-        locations={[0, 0.5, 0.6, 1]}
-      />
-      <View style={{
-        flexGrow: 1,
-        justifyContent: 'center',
-        alignItems: 'center'
+      <ImageBackground source={require('../../assets/images/getStarted/signup/BGPersonalInfos.png')} style={{
+        flex: 1,
+        resizeMode: "cover",
+        justifyContent: "center",
+        alignItems: "center"
       }}>
-        <Text style={styles.title}>Birthday</Text>
-      </View>
+        <View style={{
+          flexGrow: 1,
+          justifyContent: 'center',
+          alignItems: 'center'
+        }}>
+          <Text style={styles.title}>Birthday</Text>
+        </View>
 
-      <View style={{
-        flexGrow: 1,
-        justifyContent: 'center',
-        alignItems: 'center'
-      }}>
-        <DateTimePicker
-          testID="dateTimePicker"
-          value={date}
-          mode={mode}
-          is24Hour={true}
-          display="spinner"
-          onChange={onChange}
-          style={{
-            width: Dimensions.get('window').width - 80,
+        <View style={{
+          flexGrow: 1,
+          justifyContent: 'center',
+          alignItems: 'center'
+        }}>
+          <Text style={{
+            fontFamily: "SandyKidsRegular",
+            fontSize: 40,
+
+          }}>{date.getDate() + ' / ' + (date.getMonth() + 1) + ' / ' + date.getFullYear()}</Text>
+        </View>
+
+        <View style={{
+          flexGrow: 1,
+          justifyContent: 'center',
+          alignItems: 'center'
+        }}>
+          <TouchableOpacity style={{
+            backgroundColor: "#fff",
+            paddingRight: 50,
+            paddingLeft: 50,
+            paddingTop: 15,
+            paddingBottom: 15,
+            borderRadius: 10
           }}
-          textColor='blue'
-          maximumDate={new Date()}
-        />
-      </View>
+            onPress={() => setShow(true)}>
+            <Text style={{
+              fontSize: 20,
+              textAlign: 'center',
+              fontFamily: 'SandyKidsRegular',
+              letterSpacing: 3,
+              color: "#2d3436"
+            }}>CHOOSE DATE</Text>
+          </TouchableOpacity>
+        </View>
+
+        <View style={{
+          flexGrow: 1,
+          justifyContent: 'center',
+          alignItems: 'center'
+        }}>
+          {show && (
+            <DateTimePicker
+              testID="dateTimePicker"
+              value={date}
+              mode={mode}
+              is24Hour={true}
+              display="spinner"
+              onChange={onChange}
+              style={{
+                width: Dimensions.get('window').width - 80,
+              }}
+              textColor='blue'
+              maximumDate={new Date()}
+            />
+          )}
+        </View>
+      </ImageBackground>
     </View>
   );
 };
@@ -69,9 +106,7 @@ const ThirdPage = connect(null, mapDispatchToProps)(_ThirdPage)
 
 const styles = StyleSheet.create({
   container: {
-    flexGrow: 1,
-    alignItems: 'center',
-    justifyContent: 'center'
+    flexGrow: 1
   },
 
   inputText: {

@@ -2,9 +2,8 @@ import React, { useState } from 'react'
 import { StyleSheet, View, Dimensions, SafeAreaView, Text, ScrollView, StatusBar, Image, KeyboardAvoidingView, TouchableOpacity } from 'react-native'
 import LinearGradient from 'react-native-linear-gradient'
 import { connect } from 'react-redux'
-// import * as ImagePicker from 'expo-image-picker';
 import { TextInput } from 'react-native-gesture-handler'
-import ImagePicker from 'react-native-image-crop-picker';
+import ImagePicker from 'react-native-image-crop-picker'
 
 export default class _AddPost extends React.Component {
 
@@ -19,9 +18,6 @@ export default class _AddPost extends React.Component {
     }
 
     render() {
-
-        const image = require('../../../assets/images/parentZone/backgroundAdd.jpeg');
-        const kid_avatar = require('../../../assets/images/kid_avatar.png');
 
         const pickImage = async () => {
             ImagePicker.openPicker({
@@ -100,7 +96,6 @@ export default class _AddPost extends React.Component {
                                         }} />
                             </TouchableOpacity>
                             <LinearGradient
-                                // Background Linear Gradient
                                 colors={['#FFFC1A', '#1A2FFF', '#FF1AEE', '#FFFC1A']}
                                 start={{ x: -1, y: 0 }}
                                 end={{ x: 1, y: 0 }}
